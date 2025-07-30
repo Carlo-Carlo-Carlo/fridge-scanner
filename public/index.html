@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scanner de Frigo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🥘 Frigo Scann</h1>
+      <p>Découvrez des recettes délicieuses avec ce que vous avez dans votre frigo!</p>
+    </div>
+
+    <div class="main-content">
+      <div class="scanner-section">
+        <div class="camera-container">
+          <video id="video" autoplay playsinline></video>
+          <div id="camera-placeholder" class="camera-placeholder">📷 Caméra non activée</div>
+        </div>
+        <button id="startCamera" class="scan-btn">📸 Activer la Caméra</button>
+        <button id="scanFridge" class="scan-btn hidden">🔍 Scanner le Frigo</button>
+        <button id="simulateScan" class="scan-btn">🎲 Simulation (Demo)</button>
+      </div>
+
+      <div class="manual-input">
+        <input type="text" id="ingredientInput" class="ingredient-input" placeholder="Ajouter un ingrédient..." />
+        <button id="addIngredient" class="add-btn">➕ Ajouter</button>
+      </div>
+
+      <div class="ingredients-section">
+        <h3>🥬 Ingrédients détectés :</h3>
+        <div id="ingredientsList" class="ingredients-list"></div>
+      </div>
+      <div style="text-align: center; margin-top: 10px;">
+  <div style="text-align: center; margin-top: 20px;">
+  <label for="recipeStyle" style="color: #333; font-weight: bold; margin-right: 10px;">Style de recette :</label>
+  <select id="recipeStyle" class="ingredient-input" style="width: auto;">
+    <option value="gourmet">👨‍🍳 Gourmet</option>
+    <option value="healthy">🥗 Healthy</option>
+    <option value="rapide">⚡ Rapide</option>
+    <option value="végétarienne">🌱 Végétarienne</option>
+    <option value="familiale">👪 Familiale</option>
+  </select>
+</div>
+
+        <button id="gptRecipeBtn" class="scan-btn">🎯 Recette par GPT</button>
+</div>
+
+
+      <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p>Recherche de recettes...</p>
+      </div>
+
+      <div class="recipes-section">
+        <h3>👨‍🍳 Recettes suggérées :</h3>
+        <div id="recipesList"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
